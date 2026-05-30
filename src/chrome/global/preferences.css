@@ -1,0 +1,216 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ * 
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ * License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is the Preferences UI System.
+ * 
+ * The Initial Developer of the Original Code is
+ * Ben Goodger.
+ * Portions created by the Initial Developer are Copyright (C) 2005
+ * the Initial Developer. All Rights Reserved.
+ * 
+ * Contributor(s):
+ *   Ben Goodger <ben@mozilla.org>
+ * 
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== preferences.css =====================================================
+  == Styles used by the XUL prefwindow element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: dialog ::::: */
+
+prefwindow {
+  padding: 0;
+}
+
+prefpane {
+  padding: 10px;
+}
+
+prefwindow[type="child"] > prefpane {
+  padding-bottom: 0;
+}
+
+/* !importantは念のため */
+.prefWindow-dlgbuttons {
+  padding-bottom: 5px !important;
+  padding-inline-start: 5px !important;
+  padding-inline-end: 5px !important;
+}
+
+/* ::::: ヘルプボタン ::::: */
+
+button[dlgtype="help"] {
+  cursor: help;
+}
+
+button + button[dlgtype="help"] {
+  margin-inline-start: 12px;
+}
+
+/* ::::: Prefindow Vの一番上の切り替え部分 ::::: */
+
+.paneSelector {
+  background-color: rgb(255, 255, 255);
+  padding-inline-start: 5px;
+  padding-inline-end: 1em;
+  margin: 0;
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: rgb(238, 240, 243) rgb(110, 115, 120);
+}
+
+radio[pane] {
+  -moz-box-pack: center;
+  -moz-box-orient: horizontal !important; /* !importantは念のため */
+  min-width: 6em;
+  font: menu;
+  color: rgb(0, 0, 0);
+  background-image: -moz-linear-gradient(center top, rgb(170, 182, 196), rgb(170, 182, 196));
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 2px;
+  border: 6px solid;
+  border-radius: 5px;
+  -moz-border-top-colors: transparent transparent transparent rgb(0, 0, 0) rgb(187, 198, 209) rgb(177, 187, 201);
+  -moz-border-right-colors: transparent transparent transparent rgb(0, 0, 0) rgb(162, 174, 187) rgb(167, 180, 193);
+  -moz-border-bottom-colors: transparent transparent transparent rgb(0, 0, 0) rgb(151, 166, 182) rgb(157, 170, 185);
+  -moz-border-left-colors: transparent transparent transparent rgb(0, 0, 0) rgb(187, 198, 209) rgb(177, 187, 201);
+  -moz-border-radius: 7px;
+}
+
+radio[pane][focused="true"] {
+  -moz-border-top-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(187, 198, 209) rgb(177, 187, 201);
+  -moz-border-right-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(162, 174, 187) rgb(167, 180, 193);
+  -moz-border-bottom-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(151, 166, 182) rgb(157, 170, 185);
+  -moz-border-left-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(187, 198, 209) rgb(177, 187, 201);
+}
+
+radio[pane]:hover:active,
+radio[pane][selected="true"] {
+  color: rgb(255, 255, 255);
+  background-image: -moz-linear-gradient(center top, rgb(144, 161, 179), rgb(144, 161, 179));
+  -moz-border-top-colors: transparent transparent transparent rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+  -moz-border-right-colors: transparent transparent transparent rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+  -moz-border-bottom-colors: transparent transparent transparent rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+  -moz-border-left-colors: transparent transparent transparent rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+}
+
+radio[pane][focused="true"]:hover:active,
+radio[pane][focused="true"][selected="true"] {
+  -moz-border-top-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+  -moz-border-right-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+  -moz-border-bottom-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+  -moz-border-left-colors: transparent rgb(152, 165, 178) rgb(152, 165, 178) rgb(0, 0, 0) rgb(130, 144, 165) rgb(137, 154, 172);
+}
+
+.paneButtonIcon {
+  display: none !important;
+}
+
+.paneButtonLabel {
+  text-align: center;
+  margin: 0 6px !important;
+}
+
+
+/* Bluetacular Moon 0.1a27-pmr: Pale Moon Preferences visual pass.
+   Keep PMR Preferences structure and no icon buttons. Only adjust colors,
+   rounded buttons and Bluetacular-like blue underlay. */
+prefwindow,
+prefpane {
+  background-color: #F6F8FA !important;
+}
+
+.paneSelector {
+  background-color: #d6dee7 !important;
+  background-image: linear-gradient(#f7f8f9, #d8e0e8 55%, #c5d0dc) !important;
+  border-bottom-color: #8f9aaa !important;
+}
+
+/* Top Preferences category buttons: text-only, rounded, blue underlay. */
+radio[pane] {
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-color: #d7dfe8 !important;
+  background-image: linear-gradient(#f3fbff, #bfe2fa 42%, #93c7ee 52%, #d9efff) !important;
+  color: #000 !important;
+  text-shadow: 0 1px rgba(255,255,255,.75) !important;
+}
+
+radio[pane][focused="true"],
+radio[pane]:hover {
+  background-image: linear-gradient(#ffffff, #d4eeff 40%, #a7d5f7 52%, #e8f7ff) !important;
+  color: #000 !important;
+}
+
+radio[pane]:hover:active,
+radio[pane][selected="true"] {
+  background-image: linear-gradient(#9bc9ea, #dff4ff) !important;
+  color: #000 !important;
+  text-shadow: 0 1px rgba(255,255,255,.65) !important;
+}
+
+radio[pane][focused="true"]:hover:active,
+radio[pane][focused="true"][selected="true"] {
+  background-image: linear-gradient(#8fc3e8, #dff4ff) !important;
+  color: #000 !important;
+}
+
+/* Preserve the PMR/Bluetacular decision: Preferences pane buttons stay without icons. */
+.paneButtonIcon {
+  display: none !important;
+}
+
+/* Normal buttons inside Preferences: rounded PMR button, Bluetacular-like blue paint. */
+prefwindow button:not([type="menu-button"]),
+prefpane button:not([type="menu-button"]) {
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-color: #d7dfe8 !important;
+  background-image: linear-gradient(#f3fbff, #bfe2fa 42%, #93c7ee 52%, #d9efff) !important;
+  color: #000 !important;
+  text-shadow: 0 1px rgba(255,255,255,.75) !important;
+}
+
+prefwindow button:not([type="menu-button"]):focus,
+prefpane button:not([type="menu-button"]):focus,
+prefwindow button:not([type="menu-button"]):hover,
+prefpane button:not([type="menu-button"]):hover {
+  background-image: linear-gradient(#ffffff, #d4eeff 40%, #a7d5f7 52%, #e8f7ff) !important;
+  color: #000 !important;
+}
+
+prefwindow button:not([type="menu-button"]):hover:active,
+prefpane button:not([type="menu-button"]):hover:active,
+prefwindow button[open="true"]:not([type="menu-button"]),
+prefpane button[open="true"]:not([type="menu-button"]) {
+  background-image: linear-gradient(#9bc9ea, #dff4ff) !important;
+  color: #000 !important;
+}
+
+
+/* Bluetacular Moon 0.1a28-pmr fallback for Preferences child dialog command buttons. */
+prefwindow[type="child"] button:not([type="menu-button"]) {
+  -moz-appearance: none !important;
+  border: 1px solid #5f9bc7 !important;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: none !important;
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-image: linear-gradient(#f3fbff, #bfe2fa 42%, #93c7ee 52%, #d9efff) !important;
+  color: #000 !important;
+}

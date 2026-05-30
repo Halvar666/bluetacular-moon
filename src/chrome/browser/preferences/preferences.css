@@ -1,0 +1,434 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ * 
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ * 
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ * License for the specific language governing rights and limitations
+ * under the License.
+ * 
+ * The Original Code is the Firefox Preferences System.
+ *
+ * The Initial Developer of the Original Code is
+ * Ben Goodger.
+ * Portions created by the Initial Developer are Copyright (C) 2005
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Ben Goodger (ben@mozilla.org)
+ * 
+ * ***** END LICENSE BLOCK ***** */
+
+#saveToRow {
+  -moz-box-align: center;
+}
+
+/* Privacy Pane */
+
+/* styles for the link elements copied from .text-link in global.css */
+
+.inline-link {
+  color: rgb(0, 0, 255);
+  text-decoration: underline;
+}
+
+.inline-link:not(:focus) {
+  outline-color: transparent;
+}
+
+.inline-link:focus {
+  outline-color: rgb(0, 0, 0);
+}
+
+.inline-link:hover:active {
+  color: rgb(255, 0, 0);
+}
+
+/* Advanced Pane */
+
+/* Adding padding-bottom prevents the bottom of the tabpanel from being cutoff
+   when browser.preferences.animateFadeIn = true */
+#advancedPrefs {
+  padding-bottom: 8px;
+}
+
+/* bottom-most box containing a groupbox in a prefpane. Prevents the bottom
+   of the groupbox from being cutoff */
+.bottomBox {
+  padding-bottom: 4px;
+}
+
+/* ::::: Modeless Window Dialogs ::::: */
+
+.windowDialog,
+.windowDialog prefpane {
+  padding: 0;
+}
+
+.contentPane {
+  margin-top: 9px;
+  margin-bottom: 5px;
+  margin-inline-start: 8px;
+  margin-inline-end: 8px;
+}
+
+.actionButtons {
+  margin-top: 0 !important;
+  margin-bottom: 5px !important;
+  margin-inline-start: 5px !important;
+  margin-inline-end: 0 !important;
+}
+
+.actionButtons:only-child {
+  margin-inline-end: 5px !important;
+}
+
+/* Applications Pane */
+#BrowserPreferences[animated="true"] #handlersView {
+  height: 25em;
+}
+
+#BrowserPreferences[animated="false"] #handlersView {
+  -moz-box-flex: 1;
+}
+
+/* ::::: Cookieマネージャ ::::: */
+
+#cookiesChildren::-moz-tree-image(domainCol) {
+  width: 16px;
+  height: 16px;
+  list-style-image: url("chrome://global/skin/icons/folder-item.png") !important;
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+  margin: 0 2px;
+}
+
+#cookiesChildren::-moz-tree-image(domainCol, container) {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#cookiesChildren::-moz-tree-image(domainCol, container, open) {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+#cookieInfoBox {
+  margin: 5px;
+  border-top: 1px solid rgb(110, 115, 120);
+  border-right: 1px solid rgb(238, 240, 243);
+  border-bottom: 1px solid rgb(238, 240, 243);
+  border-left: 1px solid rgb(110, 115, 120);
+}
+
+#cookieInfoBox textbox {
+  background-color: transparent;
+}
+
+#cookieInfoGrid {
+  background-color: rgb(187, 198, 209);
+}
+
+#cookieInfoGrid textbox[disabled="true"] {
+  color: rgb(140, 153, 171);
+}
+
+#certificatesGroup separator + hbox {
+  -moz-box-orient: vertical !important;
+  float: left !important;
+  width: 100%;
+}
+
+/* Sync Pane */
+
+#syncDesc {
+  padding: 0 8em;
+}
+
+.syncGroupBox {
+  padding: 10px;
+}
+
+#accountCaptionImage {
+  list-style-image: url("chrome://mozapps/skin/profile/profileicon.png");
+}
+
+#syncAddDeviceLabel {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Bluetacular Moon 0.1a27-pmr: Preferences text/autocomplete fields.
+   Round autocomplete-textbox textbox-input fields such as the Home Page field. */
+#BrowserPreferences .autocomplete-textbox.textbox-input,
+prefwindow .autocomplete-textbox.textbox-input,
+prefpane .autocomplete-textbox.textbox-input,
+#BrowserPreferences textbox:not(.plain),
+prefwindow textbox:not(.plain),
+prefpane textbox:not(.plain) {
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-color: #f8f9fa !important;
+  background-image: linear-gradient(#ffffff, #edf0f3 48%, #e4e8ec 52%, #fbfbfb) !important;
+  -moz-border-top-colors: #cfd4dc #6f7680 !important;
+  -moz-border-right-colors: #ffffff #6f7680 !important;
+  -moz-border-bottom-colors: #ffffff #6f7680 !important;
+  -moz-border-left-colors: #cfd4dc #6f7680 !important;
+  overflow: hidden !important;
+}
+
+#BrowserPreferences .autocomplete-textbox.textbox-input[focused="true"],
+prefwindow .autocomplete-textbox.textbox-input[focused="true"],
+prefpane .autocomplete-textbox.textbox-input[focused="true"],
+#BrowserPreferences textbox:not(.plain)[focused="true"],
+prefwindow textbox:not(.plain)[focused="true"],
+prefpane textbox:not(.plain)[focused="true"] {
+  background-image: linear-gradient(#ffffff, #eef6ff 48%, #dcecfb 52%, #ffffff) !important;
+  -moz-border-top-colors: #8faeca #222 !important;
+  -moz-border-right-colors: #c7d9ea #222 !important;
+  -moz-border-bottom-colors: #ffffff #222 !important;
+  -moz-border-left-colors: #8faeca #222 !important;
+}
+
+
+/* Bluetacular Moon 0.1a28-pmr: stronger Preferences button pass.
+   a27 did not override the PMR multi-border button chrome enough.
+   Target the Pale Moon Preferences window directly and repaint normal command buttons. */
+#BrowserPreferences button:not([type="menu-button"]),
+#BrowserPreferences .actionButtons button:not([type="menu-button"]),
+#BrowserPreferences button[dlgtype],
+#BrowserPreferences #useCurrent,
+#BrowserPreferences #useBookmark,
+#BrowserPreferences #restoreDefaultHomePage,
+#BrowserPreferences #chooseFolder {
+  -moz-appearance: none !important;
+  margin: 2px !important;
+  min-height: 22px !important;
+  min-width: 0 !important;
+  padding: 1px 11px 2px 11px !important;
+  border: 1px solid #5f9bc7 !important;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: none !important;
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-color: #bfe2fa !important;
+  background-image: linear-gradient(#f3fbff, #bfe2fa 42%, #93c7ee 52%, #d9efff) !important;
+  background-clip: padding-box !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75),
+              0 1px 1px rgba(0,0,0,.10) !important;
+  color: #000 !important;
+  text-shadow: 0 1px rgba(255,255,255,.75) !important;
+}
+
+#BrowserPreferences button:not([type="menu-button"]):hover,
+#BrowserPreferences .actionButtons button:not([type="menu-button"]):hover,
+#BrowserPreferences button[dlgtype]:hover,
+#BrowserPreferences #useCurrent:hover,
+#BrowserPreferences #useBookmark:hover,
+#BrowserPreferences #restoreDefaultHomePage:hover,
+#BrowserPreferences #chooseFolder:hover,
+#BrowserPreferences button:not([type="menu-button"]):focus,
+#BrowserPreferences .actionButtons button:not([type="menu-button"]):focus,
+#BrowserPreferences button[dlgtype]:focus {
+  border-color: #4f91bf !important;
+  background-image: linear-gradient(#ffffff, #d4eeff 40%, #a7d5f7 52%, #e8f7ff) !important;
+  color: #000 !important;
+  outline: none !important;
+}
+
+#BrowserPreferences button:not([type="menu-button"]):hover:active,
+#BrowserPreferences .actionButtons button:not([type="menu-button"]):hover:active,
+#BrowserPreferences button[dlgtype]:hover:active,
+#BrowserPreferences button[open="true"]:not([type="menu-button"]) {
+  border-color: #4d82a8 !important;
+  background-image: linear-gradient(#9bc9ea, #dff4ff) !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.16) !important;
+  color: #000 !important;
+}
+
+#BrowserPreferences button[disabled="true"]:not([type="menu-button"]) {
+  border-color: #8fa3b4 !important;
+  background-image: linear-gradient(#e5edf3, #c5d3df) !important;
+  color: #8794a1 !important;
+  text-shadow: none !important;
+}
+
+/* Keep button text centered after removing PMR's thick 6px border chrome. */
+#BrowserPreferences button:not([type="menu-button"]) > .button-box {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#BrowserPreferences button:not([type="menu-button"]) .button-text {
+  margin: 0 2px !important;
+  text-align: center !important;
+}
+
+
+/* Bluetacular Moon 0.1a33-pmr: Cookies dialog pass.
+   Same approach as Saved Logins: PMR structure stays, controls get rounded
+   Bluetacular-like blue/grey treatment. Targets chrome://browser/content/preferences/cookies.xul. */
+#CookiesDialog,
+#CookiesDialog .contentPane,
+#CookiesDialog window,
+#CookiesDialog dialog {
+  background-color: #F6F8FA !important;
+  color: #000 !important;
+}
+
+/* Search/filter field */
+#CookiesDialog #filter {
+  -moz-appearance: none !important;
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-color: #f8f9fa !important;
+  background-image: linear-gradient(#ffffff, #edf0f3 48%, #e4e8ec 52%, #fbfbfb) !important;
+  -moz-border-top-colors: #cfd4dc #6f7680 !important;
+  -moz-border-right-colors: #ffffff #6f7680 !important;
+  -moz-border-bottom-colors: #ffffff #6f7680 !important;
+  -moz-border-left-colors: #cfd4dc #6f7680 !important;
+  overflow: hidden !important;
+}
+
+#CookiesDialog #filter[focused="true"] {
+  background-image: linear-gradient(#ffffff, #eef6ff 48%, #dcecfb 52%, #ffffff) !important;
+  -moz-border-top-colors: #8faeca #222 !important;
+  -moz-border-right-colors: #c7d9ea #222 !important;
+  -moz-border-bottom-colors: #ffffff #222 !important;
+  -moz-border-left-colors: #8faeca #222 !important;
+}
+
+#CookiesDialog #filter .textbox-search-icon {
+  list-style-image: url("chrome://browser/skin/Search.png") !important;
+  -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+}
+
+#CookiesDialog #filter .textbox-input-box {
+  background: transparent !important;
+}
+
+/* Cookies tree/list */
+#CookiesDialog #cookiesList,
+#CookiesDialog tree {
+  -moz-appearance: none !important;
+  background-color: #edf2f6 !important;
+  border: 1px solid #494f5d !important;
+}
+
+#CookiesDialog treechildren {
+  background-color: #edf2f6 !important;
+}
+
+#CookiesDialog treechildren::-moz-tree-row(selected) {
+  background-color: #9fc9e7 !important;
+  background-image: linear-gradient(#d8f0ff, #8bc7ec 50%, #5fb1e3) !important;
+}
+
+#CookiesDialog treechildren::-moz-tree-cell-text(selected) {
+  color: #000 !important;
+}
+
+/* Cookie info box */
+#CookiesDialog #cookieInfoBox {
+  background-color: #F6F8FA !important;
+  border: 1px solid #8f9aaa !important;
+  border-radius: 5px !important;
+  box-shadow: inset 1px 1px rgba(255,255,255,.45),
+              inset -1px -1px rgba(0,0,0,.10) !important;
+}
+
+#CookiesDialog #cookieInfoGrid {
+  background-color: transparent !important;
+}
+
+#CookiesDialog #cookieInfoBox textbox {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+/* Cookies dialog command buttons */
+#CookiesDialog button,
+#CookiesDialog #removeSelectedCookies,
+#CookiesDialog #removeAllCookies,
+#CookiesDialog button[dlgtype="accept"],
+#CookiesDialog button[dlgtype="cancel"] {
+  -moz-appearance: none !important;
+  margin: 2px !important;
+  min-height: 22px !important;
+  min-width: 0 !important;
+  padding: 1px 11px 2px 11px !important;
+  border: 1px solid #5f9bc7 !important;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: none !important;
+  border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  background-color: #bfe2fa !important;
+  background-image: linear-gradient(#f3fbff, #bfe2fa 42%, #93c7ee 52%, #d9efff) !important;
+  background-clip: padding-box !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75),
+              0 1px 1px rgba(0,0,0,.10) !important;
+  color: #000 !important;
+  text-shadow: 0 1px rgba(255,255,255,.75) !important;
+}
+
+#CookiesDialog button:hover,
+#CookiesDialog button:focus,
+#CookiesDialog #removeSelectedCookies:hover,
+#CookiesDialog #removeAllCookies:hover,
+#CookiesDialog #removeSelectedCookies:focus,
+#CookiesDialog #removeAllCookies:focus {
+  border-color: #4f91bf !important;
+  background-image: linear-gradient(#ffffff, #d4eeff 40%, #a7d5f7 52%, #e8f7ff) !important;
+  color: #000 !important;
+  outline: none !important;
+}
+
+#CookiesDialog button:hover:active,
+#CookiesDialog button[open="true"],
+#CookiesDialog #removeSelectedCookies:hover:active,
+#CookiesDialog #removeAllCookies:hover:active {
+  border-color: #4d82a8 !important;
+  background-image: linear-gradient(#9bc9ea, #dff4ff) !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.16) !important;
+}
+
+#CookiesDialog button[disabled="true"],
+#CookiesDialog #removeSelectedCookies[disabled="true"],
+#CookiesDialog #removeAllCookies[disabled="true"] {
+  border-color: #8fa3b4 !important;
+  background-image: linear-gradient(#e5edf3, #c5d3df) !important;
+  color: #8794a1 !important;
+  text-shadow: none !important;
+}
+
+#CookiesDialog button > .button-box {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* Bluetacular Moon 0.1a49-pmr: original Preferences handprint background.
+   Restore the original Bluetacular identity image in Preferences, without changing
+   the current #F6F8FA light background color. */
+#BrowserPreferences {
+  background-color: #F6F8FA !important;
+  background-image: url("chrome://browser/skin/preferences/pref_panel_bkg.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: right bottom !important;
+}
+
+#BrowserPreferences prefpane,
+#BrowserPreferences tabpanels,
+#BrowserPreferences tabpanel {
+  background-color: transparent !important;
+}

@@ -1,0 +1,21 @@
+Bluetacular Moon
+
+This Source Code Form is subject to the terms of the Mozilla Public License,
+v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain
+one at:
+
+https://mozilla.org/MPL/2.0/
+
+This Source Code Form is "Incompatible With Secondary Licenses", as defined by
+the Mozilla Public License, v. 2.0.
+
+Portions derived from the original Bluetacular theme were originally released
+under the Mozilla Public License 1.1 and are redistributed here under the
+Mozilla Public License 2.0.
+
+Past Modern Revisited portions are distributed under the Mozilla Public
+License 2.0.
+
+Some retained Mozilla / Firefox / SeaMonkey source files and resources may
+contain their own license headers. Those notices are preserved in the
+corresponding files.

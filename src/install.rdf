@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!-- This Source Code is subject to the terms of the Mozilla Public License
+   - version 2.0 (the "License"). You can obtain a copy of the License at
+   - http://mozilla.org/MPL/2.0/. -->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>bluetacular-moon-pmr@halvar666</em:id>
+    <em:version>1.0.0</em:version>
+    <em:name>Bluetacular Moon</em:name>
+    <em:description>A fork of the classic Bluetacular theme by Nicholas Baudean.</em:description>
+    <em:creator>Halvar666</em:creator>
+    <em:type>4</em:type>
+    <em:internalName>bluetacularmoon</em:internalName>
+    <em:skinnable>true</em:skinnable>
+
+
+    <em:contributor>Nicholas J. Baudean - original Bluetacular theme</em:contributor>
+    <em:contributor>Lootyhoof - Past Modern Revisited</em:contributor>
+    <em:contributor>Kuden - original Past Modern theme</em:contributor>
+    <em:contributor>Mozilla / The SeaMonkey Project - retained theme resources</em:contributor>
+    <em:contributor>Graciliano - Windows caption button resources</em:contributor>
+
+    <em:targetApplication>
+      <!-- Pale Moon -->
+      <Description>
+        <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
+        <em:minVersion>29.3.0</em:minVersion>
+        <em:maxVersion>34.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+  </Description>
+</RDF>

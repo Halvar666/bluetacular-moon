@@ -1,0 +1,209 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+  --toolbarbutton-small-image: url("chrome://browser/skin/Toolbar-small.png");
+}
+
+/* ::::: Library ::::: */
+
+#placesToolbar {
+  background-image: -moz-linear-gradient(center top, rgb(221, 227, 235), rgb(221, 227, 235) 10%, rgb(246, 248, 250) 50%, rgb(177, 189, 201) 80%);
+  background-repeat: no-repeat;
+  border-top-color: rgb(235, 244, 255);
+  border-right-color: rgb(149, 160, 173);
+  border-bottom-color: rgb(149, 160, 173);
+  border-left-color: rgb(218, 227, 237);
+}
+
+/* OS X compatible */
+#placesToolbar > toolbarbutton[type="menu"] {
+  min-height: 28px;
+}
+
+/* ::::: "Back" and "Forward" buttons ::::: */
+
+#back-button,
+#forward-button {
+  list-style-image: var(--toolbarbutton-small-image);
+  border-width: 0 !important;
+  padding: 0;
+  margin: 0 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.4),
+              -2px -2px 5px rgba(255,255,255,.4);
+  border-radius: 9999999px;
+}
+
+/* ::::: Back ::::: */
+
+#back-button {
+  -moz-image-region: rect(0px, 24px, 24px, 0px);
+}
+
+#back-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(24px, 24px, 48px, 0px);
+}
+
+#back-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(48px, 24px, 72px, 0px);
+}
+
+#back-button[disabled="true"] .toolbarbutton-icon {
+  opacity: 0.5;
+}
+
+/* ::::: Forward ::::: */
+
+#forward-button {
+  -moz-image-region: rect(0px, 48px, 24px, 24px);
+}
+
+#forward-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(24px, 48px, 48px, 24px);
+}
+
+#forward-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(48px, 48px, 72px, 24px);
+}
+
+#forward-button[disabled="true"] .toolbarbutton-icon {
+  opacity: 0.5;
+}
+
+/* ::::: Menubar ::::: */
+
+#placesMenu {
+  background-color: transparent;
+  border-width: 0;
+}
+
+#placesMenu > menu {
+  min-height: 28px;
+}
+
+#placesMenu > menu:not([open="true"]):not([disabled="true"]):hover,
+#placesMenu > menu[_moz-menuactive="true"]:not([disabled="true"]) {
+  border-style: solid;
+  border-top-color: rgb(248, 250, 253);
+  border-right-color: rgb(134, 146, 158);
+  border-bottom-color: rgb(124, 136, 148);
+  border-left-color: rgb(238, 240, 243);
+}
+
+#placesMenu > menu[_moz-menuactive="true"][open="true"] {
+  border-style: solid;
+  border-top-color: rgb(144, 156, 168);
+  border-right-color: rgb(238, 240, 243);
+  border-bottom-color: rgb(228, 230, 233);
+  border-left-color: rgb(134, 146, 158);
+}
+
+/* ::::: Place list and Place content ::::: */
+
+/* Left pane */
+#placesList {
+  border-width: 0;
+}
+
+/* Right pane */
+#contentView {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+#searchModifiers {
+  background-color: rgb(246, 248, 250);
+}
+
+#organizerScopeBar {
+  border-bottom-width: 2px;
+  -moz-border-bottom-colors: rgb(73, 79, 93) rgb(134, 146, 158);
+}
+
+#advancedSearch {
+  padding-top: 1px;
+}
+
+#advancedSearch > hbox,
+#advancedSearchRows > row {
+  -moz-box-align: center;
+}
+
+#searchActions,
+#advancedSearchRows {
+  padding-inline-end: 2px;
+}
+
+.small {
+  min-width: 0;
+  margin: 2px 0;
+}
+
+.small > .button-box,
+.small > .button-box > .button-text {
+  padding: 0;
+}
+
+#saveSearch {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-inline-end: 2px;
+}
+
+/* ::::: Tree in the right pane ::::: */
+
+.placesTree {
+  margin: 0;
+}
+
+#placeContent {
+  border-width: 0;
+}
+
+#placeContent > treechildren::-moz-tree-row(even) {
+  background-color: rgb(243, 243, 243);
+}
+
+#placeContent > treechildren::-moz-tree-row(even, selected) {
+  background-color: rgb(246, 248, 250);
+}
+
+#placeContent > treechildren::-moz-tree-row(even, selected, focus) {
+  background-color: rgb(66, 79, 99);
+}
+
+/* ::::: Information pane ::::: */
+
+#detailsDeck {
+  background-color: rgb(246, 248, 250);
+  padding: 5px;
+  border-top: 2px solid;
+  -moz-border-top-colors: rgb(73, 79, 93) rgb(224, 236, 246);
+}
+
+#editBMPanel_loadInSidebarCheckbox {
+  margin-top: 2px;
+}
+
+#infoBoxExpanderLabel {
+  margin-inline-start: 0;
+}
+
+/**
+ * Downloads pane
+ */
+
+#clearDownloadsButton > .toolbarbutton-icon {
+  display: none;
+}
+
+#clearDownloadsButton {
+  padding-inline-start: 9px;
+  padding-inline-end: 9px;
+}
+
+
+

@@ -1,0 +1,59 @@
+Bluetacular Moon
+================
+
+Bluetacular Moon is a complete theme for Pale Moon.
+
+Bluetacular Moon is a fork of the classic Bluetacular theme by Nicholas Baudean.
+
+Credits
+-------
+
+Bluetacular Moon includes, adapts, or derives from:
+
+- Bluetacular 1.5.1 by Nicholas J. Baudean
+  Original visual identity, icons and theme resources.
+  Originally released under the Mozilla Public License 1.1.
+
+- Past Modern Revisited by Lootyhoof
+  Used as the initial compatible Pale Moon complete theme skeleton.
+  Released under the Mozilla Public License 2.0.
+
+- Past Modern by Kuden
+  Original theme basis for Past Modern Revisited.
+
+- Mozilla / Firefox / SeaMonkey theme resources
+  Some retained files and resources originate from Mozilla or SeaMonkey
+  theme code and assets. Existing notices and license headers are preserved
+  where present.
+
+- Graciliano
+  Windows caption button resources retained through the Past Modern Revisited
+  lineage.
+
+- Halvar666
+  Pale Moon port, Bluetacular Moon fork, theme adaptation and visual repair work.
+
+License
+-------
+
+Bluetacular Moon is distributed under the Mozilla Public License 2.0.
+
+Portions derived from the original Bluetacular theme were originally released
+under the Mozilla Public License 1.1. They are redistributed here under the
+Mozilla Public License 2.0, as permitted by MPL 1.1 and the MPL 2.0 upgrade
+rules.
+
+This Source Code Form is Incompatible With Secondary Licenses, as defined by
+the Mozilla Public License 2.0.
+
+Past Modern Revisited portions remain under MPL 2.0.
+
+No affiliation
+--------------
+
+Bluetacular Moon is an independent community fork.
+
+No affiliation with Mozilla, Moonchild Productions, Pale Moon, Lootyhoof,
+Kuden, Nicholas J. Baudean, or the original Bluetacular project is implied.
+
+Trademarks and product names are the property of their respective owners.

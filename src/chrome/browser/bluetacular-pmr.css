@@ -1,0 +1,539 @@
+/* Bluetacular Moon 0.1a1-pmr visual layer.
+   Past Modern Revisited skeleton controls geometry; this file only softens colors
+   and points small go/search icons to Bluetacular donor assets. */
+
+#nav-bar:not(:-moz-lwtheme) {
+  background-image: linear-gradient(#f7f7f7, #d8dbe1 50%, #edf0f4) !important;
+  border-top-color: #ffffff !important;
+  border-bottom-color: #9aa4ad !important;
+}
+
+#PersonalToolbar:not(:-moz-lwtheme) {
+  background-image: linear-gradient(#eef0f4, #d4d9e0 80%) !important;
+}
+
+/* 0.1a4: toolbar-menubar background intentionally left to PMR/original grey.
+   Original Bluetacular does not use the blue menubar band; blue belongs mainly to the active tab. */
+#nav-bar .toolbarbutton-1 > .toolbarbutton-icon:not(:-moz-lwtheme) {
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+#urlbar-go-button,
+#go-button {
+  list-style-image: url("chrome://browser/skin/Go-arrow.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+#urlbar-go-button:not([disabled="true"]):hover,
+#go-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(16px 16px 32px 0px) !important;
+}
+
+.search-go-button {
+  list-style-image: url("chrome://browser/skin/Search.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+.search-go-button:hover {
+  -moz-image-region: rect(0px 32px 16px 16px) !important;
+}
+.search-go-button:hover:active {
+  -moz-image-region: rect(0px 48px 16px 32px) !important;
+}
+.search-go-button[disabled="true"] {
+  -moz-image-region: rect(0px 64px 16px 48px) !important;
+  opacity: 1 !important;
+}
+
+
+/* 0.1a2-pmr conservative extension pass.
+   Preserve PMR geometry, only soften some remaining PMR-specific accents and let replaced donor icons show through. */
+#TabsToolbar:not(:-moz-lwtheme) {
+  background-image: linear-gradient(#eef1f5, #d7dbe2 55%, #eceff3) !important;
+}
+
+#nav-bar .toolbarbutton-1,
+#nav-bar .toolbarbutton-menubutton-button {
+  filter: none !important;
+}
+
+/* Keep bookmark/history star and feed visuals crisp with donor assets. */
+#feed-button,
+#feed-button > .toolbarbutton-icon,
+#feed-button > .toolbarbutton-menu-dropmarker {
+  list-style-image: url("chrome://browser/skin/feeds/feedIcon16.png") !important;
+  -moz-image-region: auto !important;
+}
+
+
+/* 0.1a3-pmr conservative tab visual pass.
+   Keep Past Modern Revisited tab geometry; use Bluetacular tab textures only as visual fill. */
+#TabsToolbar:not(:-moz-lwtheme) {
+  background-image: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png"),
+                    linear-gradient(#eef1f5, #d7dbe2 55%, #eceff3) !important;
+  background-repeat: repeat-x, repeat-x !important;
+  background-position: left top, left top !important;
+}
+
+.tabbrowser-tabs:not(:-moz-lwtheme) {
+  background-image: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") !important;
+  background-repeat: repeat-x !important;
+}
+
+.tabbrowser-tab:not(:-moz-lwtheme):not([selected="true"]) {
+  background-image: url("chrome://browser/skin/tabbrowser/tab-bkgnd.png") !important;
+  background-repeat: repeat-x !important;
+  background-color: #d7dbe2 !important;
+}
+
+.tabbrowser-tab:not(:-moz-lwtheme):not([selected="true"]):hover {
+  background-image: url("chrome://browser/skin/tabbrowser/tab-hover-bkgnd.png") !important;
+  background-repeat: repeat-x !important;
+  background-color: #e9edf2 !important;
+}
+
+.tabbrowser-tab:not(:-moz-lwtheme)[selected="true"] {
+  background-image: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") !important;
+  background-repeat: repeat-x !important;
+  background-color: #f4f5f7 !important;
+}
+
+.tabs-bottom:not(:-moz-lwtheme) {
+  background-image: url("chrome://browser/skin/tabbrowser/tabstrip-bottom.png") !important;
+  background-repeat: repeat !important;
+}
+
+.tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+  list-style-image: url("chrome://browser/skin/tabbrowser/newtab.png") !important;
+}
+
+
+/* 0.1a5-pmr conservative URL/search visual pass.
+   Geometry stays PMR: no width/margin/padding changes. This only changes paint. */
+#urlbar,
+.searchbar-textbox {
+  background-color: #f8f9fa !important;
+  background-image: linear-gradient(#ffffff, #edf0f3 48%, #e4e8ec 52%, #fbfbfb) !important;
+  background-repeat: repeat-x !important;
+  background-position: left center !important;
+  -moz-border-top-colors: #cfd4dc #6f7680 !important;
+  -moz-border-right-colors: #ffffff #6f7680 !important;
+  -moz-border-bottom-colors: #ffffff #6f7680 !important;
+  -moz-border-left-colors: #cfd4dc #6f7680 !important;
+}
+
+#urlbar[focused="true"],
+.searchbar-textbox[focused="true"] {
+  background-image: linear-gradient(#ffffff, #eef6ff 48%, #dcecfb 52%, #ffffff) !important;
+  -moz-border-top-colors: #8faeca #222 !important;
+  -moz-border-right-colors: #c7d9ea #222 !important;
+  -moz-border-bottom-colors: #ffffff #222 !important;
+  -moz-border-left-colors: #8faeca #222 !important;
+}
+
+/* Make the identity/search-engine segment closer to Bluetacular grey,
+   but keep the PMR element sizes and layout. */
+#identity-box,
+.searchbar-engine-button {
+  background-image: linear-gradient(#f8f8f8, #dfe5ec 22%, #cbd4de 55%, #edf1f5) !important;
+  color: #000 !important;
+}
+
+#identity-box[open="true"],
+#identity-box:hover:active,
+.searchbar-engine-button[open="true"] {
+  background-image: linear-gradient(#cfd9e4, #edf4fb) !important;
+}
+
+/* Preserve PMR special SSL colors, only soften them slightly. */
+#identity-box.verifiedDomain {
+  background-image: linear-gradient(#d9ecff, #9dc7ff 55%, #d8ecff) !important;
+}
+
+#identity-box.verifiedIdentity {
+  background-image: linear-gradient(#ddf5d4, #a7df90 55%, #e2f7d9) !important;
+}
+
+
+/* 0.1a7b-pmr: original Bluetacular toolbar-menubar/nav-bar underlay.
+   Built from a6, not from the rejected a7.
+   Original reference uses back-pinstripe-overlay.png for both nodes, not the blue menubar.png. */
+#toolbar-menubar:not(:-moz-lwtheme),
+#nav-bar:not(:-moz-lwtheme) {
+  background-image: url("chrome://browser/skin/back-pinstripe-overlay.png") !important;
+  background-repeat: repeat !important;
+  background-position: 0% 0% !important;
+  background-color: transparent !important;
+}
+
+#toolbar-menubar:not(:-moz-lwtheme) {
+  border-bottom-color: rgb(164, 168, 172) !important;
+}
+
+#nav-bar:not(:-moz-lwtheme) {
+  border-bottom-color: rgb(163, 163, 163) !important;
+}
+
+
+/* 0.1a8-pmr conservative rounded url/search bars.
+   Do not chase the broken original structure; only approximate the Bluetacular look
+   by rounding the outer shells and left segments while preserving PMR geometry. */
+#urlbar,
+.searchbar-textbox {
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+}
+
+#identity-box {
+  border-top-left-radius: 9999px !important;
+  border-bottom-left-radius: 9999px !important;
+  padding-left: 3px !important;
+}
+
+.searchbar-engine-button {
+  border-top-left-radius: 9999px !important;
+  border-bottom-left-radius: 9999px !important;
+  padding-left: 2px !important;
+}
+
+#urlbar-icons,
+.search-go-container {
+  border-top-right-radius: 9999px !important;
+  border-bottom-right-radius: 9999px !important;
+}
+
+#page-proxy-stack,
+.searchbar-engine-button > .button-box {
+  border-top-left-radius: 9999px !important;
+  border-bottom-left-radius: 9999px !important;
+}
+
+
+/* 0.1a13-pmr: donor startcap start buttons.
+   Built from a8 as requested. Use the original Bluetacular startcap image for the
+   URL/search start buttons instead of trying to fake the shape with extra oval CSS. */
+#identity-box,
+.searchbar-engine-button {
+  background-image: url("chrome://browser/skin/urlbar/startcap.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  background-size: 100% 100% !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+#urlbar[focused="true"] #identity-box,
+.searchbar-textbox[focused="true"] .searchbar-engine-button {
+  background-image: url("chrome://browser/skin/urlbar/startcap-focused.png") !important;
+}
+
+#identity-box[open="true"],
+#identity-box:hover:active,
+.searchbar-engine-button[open="true"],
+.searchbar-engine-button:hover:active {
+  background-image: url("chrome://browser/skin/urlbar/startcap-active.png") !important;
+}
+
+#urlbar[focused="true"] #identity-box[open="true"],
+#urlbar[focused="true"] #identity-box:hover:active,
+.searchbar-textbox[focused="true"] .searchbar-engine-button[open="true"],
+.searchbar-textbox[focused="true"] .searchbar-engine-button:hover:active {
+  background-image: url("chrome://browser/skin/urlbar/startcap-active-focused.png") !important;
+}
+
+#identity-box > hbox,
+.searchbar-engine-button > .button-box,
+#page-proxy-stack {
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+
+/* 0.1a14-pmr wider donor start buttons.
+   Keep the successful a13 donor startcap shape, but widen the URL/search start buttons
+   to better match the original Bluetacular reference. */
+#identity-box {
+  min-width: 44px !important;
+  padding-left: 4px !important;
+  padding-right: 6px !important;
+}
+
+.searchbar-engine-button {
+  min-width: 40px !important;
+  padding-left: 3px !important;
+  padding-right: 5px !important;
+}
+
+#identity-box > hbox,
+.searchbar-engine-button > .button-box,
+#page-proxy-stack {
+  min-width: inherit !important;
+}
+
+
+/* 0.1a23-pmr: original Bluetacular search icon pass.
+   Use the donor Search.png everywhere it should reasonably appear: browser search-go button,
+   generic search textboxes (including Add-ons Manager header search), and related search icons. */
+.search-go-button {
+  list-style-image: url("chrome://browser/skin/Search.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+.search-go-button:hover {
+  -moz-image-region: rect(0px 32px 16px 16px) !important;
+}
+.search-go-button:hover:active {
+  -moz-image-region: rect(0px 48px 16px 32px) !important;
+}
+.search-go-button[disabled="true"] {
+  -moz-image-region: rect(0px 64px 16px 48px) !important;
+}
+
+.textbox-search-icon {
+  list-style-image: url("chrome://browser/skin/Search.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+
+#actions #searchbutton {
+  background-image: url("chrome://browser/skin/Search.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: left top !important;
+}
+
+
+/* 0.1a25-pmr: original Bluetacular tab close icon.
+   Use the donor 16px close.png sprite and override PMR's 15px/two-row close sprite mapping.
+   This targets tab close buttons only, not generic dialog/window close controls. */
+.tab-close-button {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: url("chrome://global/skin/icons/close.png") !important;
+  -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+}
+
+.tab-close-button:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px) !important;
+}
+
+.tab-close-button:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+}
+
+.tabbrowser-tab[selected="true"] > .tab-close-button {
+  -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+}
+
+.tabbrowser-tab[selected="true"] > .tab-close-button:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px) !important;
+}
+
+.tabbrowser-tab[selected="true"] > .tab-close-button:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+}
+
+/* Same donor icon for the all-tabs preview close button when it explicitly requests the regular close image. */
+#allTabs-tab-close-button:-moz-lwtheme-brighttext,
+#allTabs-tab-close-button {
+  list-style-image: url("chrome://global/skin/icons/close.png") !important;
+}
+
+
+/* 0.1a38-pmr: appmenu toolbar button background.
+   Give the Pale Moon appmenu toolbar button the same neutral Bluetacular
+   pinstripe underlay as the toolbar-menubar, without changing its geometry. */
+#appmenu-toolbar-button:not(:-moz-lwtheme),
+#TabsToolbar #appmenu-toolbar-button:not(:-moz-lwtheme) {
+  background-color: transparent !important;
+  background-image: url("chrome://browser/skin/back-pinstripe-overlay.png") !important;
+  background-repeat: repeat !important;
+  background-position: 0% 0% !important;
+  border-bottom: 1px solid rgb(164, 168, 172) !important;
+  -moz-border-bottom-colors: none !important;
+}
+
+
+/* 0.1a40-pmr: app menu popup light Bluetacular pass.
+   Target the Pale Moon application menu popup specifically. Use the same light base
+   as other popups, but reduce the old PMR two-pane contrast. */
+#appmenu-popup {
+  -moz-appearance: none !important;
+  background-color: #F6F8FA !important;
+  background-image: none !important;
+  border: 1px solid rgb(164, 168, 172) !important;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: none !important;
+  color: #22262F !important;
+}
+
+#appmenuPrimaryPane,
+#appmenuSecondaryPane {
+  background-color: #F6F8FA !important;
+  background-image: none !important;
+  color: #22262F !important;
+}
+
+#appmenuPrimaryPane {
+  border-inline-end: 1px solid rgb(164, 168, 172) !important;
+  box-shadow: none !important;
+}
+
+#appmenuSecondaryPane {
+  box-shadow: inset 1px 0 rgba(164, 168, 172, .35) !important;
+}
+
+/* Menu rows inside the app menu. Keep active selection dark for readability. */
+#appmenu-popup menu:not([_moz-menuactive="true"]),
+#appmenu-popup menuitem:not([_moz-menuactive="true"]),
+#appmenu-popup .splitmenu-menuitem:not([_moz-menuactive="true"]),
+#appmenu-popup .splitmenu-menu:not([_moz-menuactive="true"]) {
+  background-color: transparent !important;
+  color: #22262F !important;
+}
+
+#appmenu-popup menuitem[_moz-menuactive="true"]:not([disabled="true"]),
+#appmenu-popup menu[_moz-menuactive="true"]:not([disabled="true"]),
+#appmenu-popup .splitmenu-menuitem[_moz-menuactive="true"]:not([disabled="true"]),
+#appmenu-popup .splitmenu-menu[_moz-menuactive="true"]:not([disabled="true"]) {
+  color: #fff !important;
+  background-color: rgb(66, 79, 99) !important;
+  background-image: linear-gradient(rgb(96, 116, 144), rgb(66, 79, 99)) !important;
+}
+
+#appmenu-popup menuitem[disabled="true"],
+#appmenu-popup menu[disabled="true"] {
+  color: #8794a1 !important;
+}
+
+/* Separators should be softer on the light base. */
+#appmenu-popup .appmenu-menuseparator,
+#appmenu-popup menuseparator {
+  border-top: 1px solid #cfd6dd !important;
+  border-bottom: 1px solid #ffffff !important;
+}
+
+/* Small edit buttons in the app menu: rounded light-blue PMR/Bluetacular style. */
+#appmenu-popup .appmenu-edit-button {
+  -moz-appearance: none !important;
+  border: 1px solid transparent !important;
+  border-radius: 9999px !important;
+  background: transparent !important;
+  padding: 2px !important;
+}
+
+#appmenu-popup .appmenu-edit-button:not([disabled]):hover {
+  border-color: #5f9bc7 !important;
+  background-image: linear-gradient(#ffffff, #d4eeff 40%, #a7d5f7 52%, #e8f7ff) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
+
+#appmenu-popup .appmenu-edit-button:not([disabled]):hover:active {
+  border-color: #4d82a8 !important;
+  background-image: linear-gradient(#9bc9ea, #dff4ff) !important;
+}
+
+
+/* 0.1a41-pmr: app menu hover follows global light menu hover. */
+#appmenu-popup menuitem[_moz-menuactive="true"]:not([disabled="true"]),
+#appmenu-popup menu[_moz-menuactive="true"]:not([disabled="true"]),
+#appmenu-popup .splitmenu-menuitem[_moz-menuactive="true"]:not([disabled="true"]),
+#appmenu-popup .splitmenu-menu[_moz-menuactive="true"]:not([disabled="true"]) {
+  color: #000 !important;
+  background-color: #D0CFD9 !important;
+  background-image: none !important;
+}
+
+
+/* 0.1a47-pmr: DOM Inspector toolbar button icon compatibility.
+   DOM Inspector's #inspector-button does not provide its own toolbar icon in PMR either,
+   so it falls back to Toolbar-large/small sprites. Give it a real icon from the
+   inspector skin. */
+#inspector-button > .toolbarbutton-icon,
+toolbarpaletteitem#wrapper-inspector-button #inspector-button > .toolbarbutton-icon,
+#customization-palette #inspector-button > .toolbarbutton-icon {
+  list-style-image: url("chrome://inspector/skin/btnSelecting.png") !important;
+  -moz-image-region: rect(0px, 21px, 21px, 0px) !important;
+  width: 21px !important;
+  height: 21px !important;
+}
+
+#inspector-button:not([disabled="true"]):hover > .toolbarbutton-icon,
+toolbarpaletteitem#wrapper-inspector-button #inspector-button:not([disabled="true"]):hover > .toolbarbutton-icon,
+#customization-palette #inspector-button:not([disabled="true"]):hover > .toolbarbutton-icon {
+  -moz-image-region: rect(21px, 21px, 42px, 0px) !important;
+}
+
+#inspector-button:not([disabled="true"]):hover:active > .toolbarbutton-icon,
+#inspector-button[open="true"] > .toolbarbutton-icon,
+toolbarpaletteitem#wrapper-inspector-button #inspector-button:not([disabled="true"]):hover:active > .toolbarbutton-icon,
+#customization-palette #inspector-button:not([disabled="true"]):hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(42px, 21px, 63px, 0px) !important;
+}
+
+/* In small-icons mode keep the same icon, just scaled by native toolbar layout. */
+toolbar[iconsize="small"] #inspector-button > .toolbarbutton-icon,
+#addon-bar #inspector-button > .toolbarbutton-icon {
+  list-style-image: url("chrome://inspector/skin/btnSelecting.png") !important;
+  -moz-image-region: rect(0px, 21px, 21px, 0px) !important;
+}
+
+
+/* 0.1a52-pmr: nav-bar icon spacing, final test based directly on a49.
+   Only the navigation toolbar is affected. This gives potential nav-bar icons
+   a wider Bluetacular-like cell without touching other toolbars, URL bar or search bar. */
+#nav-bar[mode="icons"]:not([iconsize="small"]) > toolbarbutton,
+#nav-bar[mode="icons"]:not([iconsize="small"]) > toolbaritem > toolbarbutton,
+#nav-bar[mode="icons"]:not([iconsize="small"]) > toolbarbutton > .toolbarbutton-menubutton-button,
+#nav-bar[mode="icons"]:not([iconsize="small"]) > toolbaritem > toolbarbutton > .toolbarbutton-menubutton-button {
+  min-width: 42px !important;
+}
+
+#nav-bar[mode="icons"][iconsize="small"] > toolbarbutton,
+#nav-bar[mode="icons"][iconsize="small"] > toolbaritem > toolbarbutton,
+#nav-bar[mode="icons"][iconsize="small"] > toolbarbutton > .toolbarbutton-menubutton-button,
+#nav-bar[mode="icons"][iconsize="small"] > toolbaritem > toolbarbutton > .toolbarbutton-menubutton-button {
+  min-width: 30px !important;
+}
+
+
+/* 0.1a54-pmr: medium pressed sidebar buttons in nav-bar.
+   Built from a52 after a53 was too light. This is darker than #D0CFD9,
+   but still softer than the original PMR checked state. */
+#nav-bar #bookmarks-button[checked="true"]:not(:-moz-lwtheme),
+#nav-bar #history-button[checked="true"]:not(:-moz-lwtheme),
+#nav-bar #bookmarks-button[open="true"]:not(:-moz-lwtheme),
+#nav-bar #history-button[open="true"]:not(:-moz-lwtheme) {
+  color: #000 !important;
+  background-color: #C1C6D0 !important;
+  background-image: linear-gradient(#e2e6ec, #C1C6D0 52%, #d4d9e1) !important;
+  border-top-color: #f5f7fa !important;
+  border-right-color: #a9b0ba !important;
+  border-bottom-color: #9ea6b1 !important;
+  border-left-color: #f5f7fa !important;
+}
+
+#nav-bar #bookmarks-button[checked="true"]:hover:not(:-moz-lwtheme),
+#nav-bar #history-button[checked="true"]:hover:not(:-moz-lwtheme),
+#nav-bar #bookmarks-button[open="true"]:hover:not(:-moz-lwtheme),
+#nav-bar #history-button[open="true"]:hover:not(:-moz-lwtheme) {
+  color: #000 !important;
+  background-color: #C1C6D0 !important;
+  background-image: linear-gradient(#eef2f6, #C1C6D0 50%, #d8dde5) !important;
+}
+
+#nav-bar #bookmarks-button[checked="true"]:hover:active:not(:-moz-lwtheme),
+#nav-bar #history-button[checked="true"]:hover:active:not(:-moz-lwtheme),
+#nav-bar #bookmarks-button[open="true"]:hover:active:not(:-moz-lwtheme),
+#nav-bar #history-button[open="true"]:hover:active:not(:-moz-lwtheme) {
+  color: #000 !important;
+  background-color: #B5BBC6 !important;
+  background-image: linear-gradient(#B5BBC6, #e2e6ec) !important;
+  border-top-color: #9ea6b1 !important;
+  border-right-color: #f5f7fa !important;
+  border-bottom-color: #f5f7fa !important;
+  border-left-color: #9ea6b1 !important;
+}
