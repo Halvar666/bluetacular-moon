@@ -537,3 +537,31 @@ toolbar[iconsize="small"] #inspector-button > .toolbarbutton-icon,
   border-bottom-color: #f5f7fa !important;
   border-left-color: #9ea6b1 !important;
 }
+
+
+/* 1.0.1: toolbar sprite rebase cleanup.
+   Main toolbar sprites are rebuilt from original Bluetacular artwork only.
+   Keep nav-bar toolbarbutton painting on the button itself, not as a second
+   icon layer on .toolbarbutton-icon. */
+#nav-bar[mode="icons"] .toolbarbutton-1 > .toolbarbutton-icon {
+  background-image: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* 1.0.1: original Bluetacular identity popup icon geometry. */
+#identity-popup-icon {
+  width: 64px !important;
+  height: 64px !important;
+  padding: 0 !important;
+  list-style-image: url("chrome://browser/skin/identity.png") !important;
+  -moz-image-region: rect(0px, 64px, 64px, 0px) !important;
+}
+
+.verifiedDomain > #identity-popup-container > #identity-popup-icon {
+  -moz-image-region: rect(64px, 64px, 128px, 0px) !important;
+}
+
+.verifiedIdentity > #identity-popup-container > #identity-popup-icon {
+  -moz-image-region: rect(128px, 64px, 192px, 0px) !important;
+}

@@ -9,7 +9,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>bluetacular-moon-pmr@halvar666</em:id>
-    <em:version>1.0.0</em:version>
+    <em:version>1.0.1</em:version>
     <em:name>Bluetacular Moon</em:name>
     <em:description>A fork of the classic Bluetacular theme by Nicholas Baudean.</em:description>
     <em:creator>Halvar666</em:creator>
